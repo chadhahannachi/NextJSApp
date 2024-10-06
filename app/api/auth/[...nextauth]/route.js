@@ -14,7 +14,7 @@ const handler=NextAuth({
             clientSecret:process.env.GOOGLE_SECRET,
             authorization: {
                 params: {
-                  redirect_uri: 'https://https://next-js-ofelyqhbf-chadha-hannachis-projects.vercel.app/api/auth/callback/google'
+                  redirect_uri: 'https://next-js-app-nine-eosin.vercel.app/api/auth/callback/google'
                 }
               },
         })
