@@ -12,6 +12,11 @@ const handler=NextAuth({
         GoogleProvider({
             clientId:process.env.GOOGLE_ID,
             clientSecret:process.env.GOOGLE_SECRET,
+            authorization: {
+                params: {
+                  redirect_uri: 'https://next-js-app-nine-eosin.vercel.app//api/auth/callback/google'
+                }
+              },
         })
     ],
     callbacks:{
