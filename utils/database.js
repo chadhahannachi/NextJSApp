@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 let isConnected=false
 
-export const connectToDB=async()=>{
+export const ConnectToDB=async()=>{
     mongoose.set('strictQuery',true)
 
     if(isConnected){

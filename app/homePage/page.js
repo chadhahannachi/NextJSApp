@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-const page = () => {
+const Page = () => {
   const router = useRouter(); // Initialisation du router
 
   const { data: session } = useSession();
@@ -87,4 +87,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Page
