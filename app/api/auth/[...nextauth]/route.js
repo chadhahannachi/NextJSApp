@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 // import user from "@/models/user";
 import User from "@models/user";
-import { connectToDB } from "@/utils/database";
+import { ConnectToDB } from "@/utils/database";
 import { isAddressWithin50KmOfParis } from "@/utils/validateAddress";
 
 
@@ -21,7 +21,7 @@ const handler=NextAuth({
 
         async signIn({ account, profile, user, credentials }) {
             try {
-              await connectToDB();
+              await ConnectToDB();
               const checkEmail = await User.findOne({ email: user.email });
       
               // Si l'utilisateur n'existe pas, créer un nouveau profil

@@ -1,10 +1,10 @@
 import User from "@models/user";
-import { connectToDB } from "@/utils/database";
+import { ConnectToDB } from "@/utils/database";
 import { isAddressWithin50KmOfParis } from "@/utils/validateAddress";
 
 export async function PUT(req) {
   try {
-    await connectToDB();
+    await ConnectToDB();
     const { name, email, prenom, dateDeNaissance, adresse, numeroDeTelephone } = await req.json();
 
     console.log("Données reçues du frontend:", { email, prenom, dateDeNaissance, adresse, numeroDeTelephone });
@@ -38,7 +38,7 @@ export async function PUT(req) {
 
 export async function GET(req) {
     try {
-      await connectToDB();
+      await ConnectToDB();
   
       const url = new URL(req.url);
       const email = url.searchParams.get('email');
